@@ -51,7 +51,7 @@ params[
 params["scene_limit"] = "--scene-limit 1"
 params["products_arg"] = """--products '["usgs_ls8c_level1_1"]'"""
 
-aws_develop = False  # True
+aws_develop = True
 if aws_develop:
     ssh_conn_id = "lpgs_gadi"
     params["pkgdir_arg"] = "/g/data/v10/Landsat-Collection-3-ops/scene_select_test/"
@@ -106,7 +106,7 @@ with dag:
               -W umask=33 \
               -l wd,walltime=0:30:00,mem=15GB,ncpus=1 -m abe \
               -l storage=gdata/v10+scratch/v10+gdata/if87+gdata/fj7+scratch/fj7+scratch/u46+gdata/u46 \
-              -P  {{ params.project }} -o {{ log_dir }} -e {{ log_dir }}  \
+              -P  {{ params.project }} -o {{ params.base_dir }}{{ log_ext }} -e {{ params.base_dir }}{{ log_ext }}  \
               -- /bin/bash -l -c \
                   "module use /g/data/v10/public/modules/modulefiles/; \
                   module use /g/data/v10/private/modules/modulefiles/; \
