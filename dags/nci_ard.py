@@ -94,7 +94,6 @@ with dag:
         {% set work_ext = ts_nodash + '/workdir' %}
         """
 
-    # An example of remotely starting a qsub job (all it does is ls)
     submit_task_id = f"submit_ard"
     submit_ard = SSHOperator(
         task_id=submit_task_id,
