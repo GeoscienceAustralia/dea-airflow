@@ -28,7 +28,7 @@ params = {
     "base_dir": "/g/data/v10/work/c3_ard/",
 }
 ssh_conn_id = "lpgs_gadi"
-schedule_interval = "0 4 * * *"
+schedule_interval = "0 16 * * *"
 
 # Having the info above as variables and some empty values
 # means I can easily test by adding some test code here
