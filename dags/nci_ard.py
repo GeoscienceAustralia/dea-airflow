@@ -36,6 +36,7 @@ schedule_interval = "0 16 * * *"
 
 # #/* The sed command below will remove this block of test code
 # sed '/#\/\*/,/#\*\// d' nci_ard.py > ../../nci_ard.py
+# sed '/#\/\*/,/#\*\// d' dags/nci_ard.py > ../nci_ard.py
 # params[""] =
 
 params["project"] = "u46"
