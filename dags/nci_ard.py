@@ -55,9 +55,9 @@ params[
 params["scene_limit"] = "--scene-limit 2"
 params["products_arg"] = """--products '["usgs_ls8c_level1_1"]'"""
 params["days_to_exclude_arg"] = """--days-to-exclude '["2020-06-26:2020-06-26"]'"""
-#params["run_ard_arg"] = ""
+# params["run_ard_arg"] = ""
 
-aws_develop = False #True
+aws_develop = False  # True
 if aws_develop:
     ssh_conn_id = "lpgs_gadi"
     params["pkgdir_arg"] = "/g/data/v10/Landsat-Collection-3-ops/scene_select_test/"
@@ -86,7 +86,7 @@ dag = DAG(
     default_args=default_args,
     catchup=False,
     schedule_interval=schedule_interval,
-    default_view="graph",
+    default_view="tree",
     tags=["nci", "landsat_c3"],
 )
 
