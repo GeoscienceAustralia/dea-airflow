@@ -87,7 +87,7 @@ dag = DAG(
     default_args=default_args,
     catchup=False,
     schedule_interval=schedule_interval,
-    default_view="graph",
+    default_view="tree",
     tags=["nci", "landsat_c3"],
 )
 
