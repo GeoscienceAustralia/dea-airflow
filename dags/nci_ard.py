@@ -26,7 +26,7 @@ params = {
     "products_arg": "",
     "pkgdir_arg": "/g/data/xu18/ga",
     "base_dir": "/g/data/v10/work/c3_ard/",
-    "days_to_exclude_arg": """--days-to-exclude '["2020-08-09:2020-09-03"]'""",
+    "days_to_exclude_arg": "",
     "run_ard_arg": "--run-ard",
 }
 
@@ -52,17 +52,18 @@ params[
 params[
     "config_arg"
 ] = "--config /g/data/v10/projects/c3_ard/dea-ard-scene-select/tests/scripts/airflow/dsg547_dev.conf"
-params["scene_limit"] = "--scene-limit 2"
+# params["scene_limit"] = "--scene-limit 2"
 params["products_arg"] = """--products '["usgs_ls8c_level1_1"]'"""
-params["days_to_exclude_arg"] = """--days-to-exclude '["2020-06-26:2020-06-26"]'"""
-# params["run_ard_arg"] = ""
+params["days_to_exclude_arg"] = ""
+#  if you use it it looks like """--days-to-exclude '["2020-06-26:2020-06-26"]'"""
+params["run_ard_arg"] = ""
 
-aws_develop = False  # True
+aws_develop = True
 if aws_develop:
     ssh_conn_id = "lpgs_gadi"
     params["pkgdir_arg"] = "/g/data/v10/Landsat-Collection-3-ops/scene_select_test/"
     # schedule_interval = "15 08 * * *"
-    schedule_interval = "12 * * * *"
+    schedule_interval = None
 else:
     ssh_conn_id = "dsg547"
     params["pkgdir_arg"] = "/g/data/u46/users/dsg547/results_airflow/"
